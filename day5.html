@@ -17,7 +17,11 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
-      <h1 class="logo"><a href="index.html">KAUST Academy — DAL 2026</a></h1>
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/img/kaust-academy-logo.png" alt="KAUST Academy">
+        </a>
+      </div>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -190,6 +194,16 @@
   <script src="assets/vendor/aos/aos.js"></script>
   <script>
     AOS.init();
+
+    window.addEventListener('scroll', function () {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
     const on = (type, el, listener) => {
       let selectEl = document.querySelector(el);
       if (selectEl) selectEl.addEventListener(type, listener);
